@@ -1,0 +1,10 @@
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\bin\Debug\ED_Ejemplo4_Cuadros.exe.config
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\bin\Debug\ED_Ejemplo4_Cuadros.exe
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\bin\Debug\ED_Ejemplo4_Cuadros.pdb
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\obj\Debug\ED_Ejemplo4_Cuadros.csproj.AssemblyReference.cache
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\obj\Debug\ED_Ejemplo4_Cuadros.Form1.resources
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\obj\Debug\ED_Ejemplo4_Cuadros.Properties.Resources.resources
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\obj\Debug\ED_Ejemplo4_Cuadros.csproj.GenerateResource.cache
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\obj\Debug\ED_Ejemplo4_Cuadros.csproj.CoreCompileInputs.cache
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\obj\Debug\ED_Ejemplo4_Cuadros.exe
+C:\Users\ulise\source\repos\ED_Ejemplo4_Cuadros\obj\Debug\ED_Ejemplo4_Cuadros.pdb
