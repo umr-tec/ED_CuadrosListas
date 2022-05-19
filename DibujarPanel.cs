@@ -9,11 +9,11 @@ namespace ED_Ejemplo4_Cuadros
     public partial class DibujarPanel : Panel
     {
         //Guardamos los objetos en una lista
-        private List<Dibujar> dibuja = new List<Dibujar>();
+        private List<Dibujar> dibuja = new List<Dibujar>();        
+        private Dibujar arrastrarDibujo = null;
+        Point pPoint;
 
-        private Dibujar dragDibujar = null;
-
-        //Quitar el parpadeo
+        //Propiedad para Quitar el parpadeo
         public new bool DoubleBuffered
         {
             get { return base.DoubleBuffered; }
@@ -34,7 +34,7 @@ namespace ED_Ejemplo4_Cuadros
         {
             foreach (Dibujar dibujo in dibuja)
             {
-                if (dragDibujar != dibujo)
+                if (arrastrarDibujo != dibujo)
                 {
                     dibujo.DibujaREctangulo(g);
                 }
@@ -49,11 +49,40 @@ namespace ED_Ejemplo4_Cuadros
             DibujarFugura(e.Graphics);
         }
 
+      
+
+        //Mover los cuadros
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+            if (arrastrarDibujo != null)
+            {
+                Point dif = new Point(e.Location.X - pPoint.X, e.Location.Y - pPoint.Y);
+                Point locacion = arrastrarDibujo.Locacion;
+                locacion.Offset(dif);
+                arrastrarDibujo.Locacion = locacion;
+                pPoint = e.Location;
+                Refresh();
+
+            }
+        }
+
         //Dibujar cuadros al dar click sobre el componente, se manda llamar la clase
         //Dibujar, mediante el objeto miDibujo
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
+
+            for (int i = dibuja.Count -1; i  >= 0; i--) 
+            {
+                if (dibuja[i].ProbarPosicion(e.Location)) //== true
+                {
+                    pPoint = e.Location;
+                   // arrastrarDibujo = dibuja[i];
+                    return;
+                }
+            }
+            //Dibujando el cuadrito y guardandolo en la lista
             Dibujar miDibujo = new Dibujar(e.Location);            
             dibuja.Add(miDibujo);
             Refresh();
@@ -70,6 +99,8 @@ namespace ED_Ejemplo4_Cuadros
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
+            arrastrarDibujo = null;
+            Refresh();
         }
 
     }

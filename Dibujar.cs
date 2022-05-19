@@ -41,5 +41,10 @@ namespace ED_Ejemplo4_Cuadros
                 g.DrawRectangle(Pens.Black, rectangulo);
             }
         }
+
+        //Crear un metodk para saber si estoy sobre un punto espcrigico
+        public bool ProbarPosicion(Point locacion) {
+            return rectangulo.Contains(locacion);
+        }
     }
 }
