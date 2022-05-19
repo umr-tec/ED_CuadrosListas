@@ -63,7 +63,6 @@ namespace ED_Ejemplo4_Cuadros
                 arrastrarDibujo.Locacion = locacion;
                 pPoint = e.Location;
                 Refresh();
-
             }
         }
 
@@ -78,7 +77,7 @@ namespace ED_Ejemplo4_Cuadros
                 if (dibuja[i].ProbarPosicion(e.Location)) //== true
                 {
                     pPoint = e.Location;
-                   // arrastrarDibujo = dibuja[i];
+                    arrastrarDibujo = dibuja[i];
                     return;
                 }
             }
